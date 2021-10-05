@@ -3,19 +3,12 @@ import PropTypes from "prop-types";
 
 function FeedbackOptions(props) {
   const { eventHandler, names } = props;
-  return (
-    <>
-      <Button id="good" type="button" onClick={eventHandler}>
-        {names[0]}
-      </Button>
-      <Button id="neutral" type="button" onClick={eventHandler}>
-        {names[1]}
-      </Button>
-      <Button id="bad" type="button" onClick={eventHandler}>
-        {names[2]}
-      </Button>
-    </>
-  );
+
+  return names.map((name) => (
+    <Button key={name} id={name} type="button" onClick={eventHandler}>
+      {name}
+    </Button>
+  ));
 }
 FeedbackOptions.propTypes = {
   names: PropTypes.arrayOf(PropTypes.string).isRequired,

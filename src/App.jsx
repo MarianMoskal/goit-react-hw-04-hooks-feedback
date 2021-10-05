@@ -31,7 +31,7 @@ function App() {
   }
 
   function countPositivePercentage() {
-    return Number(Math.round((good / countTotal()) * 100));
+    return Math.round((good / countTotal()) * 100);
   }
 
   return (
